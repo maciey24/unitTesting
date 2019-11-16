@@ -8,22 +8,26 @@ class DzialanieTest {
 
     @Test
     void dodajTest() {
-        // arrange
         Integer a = 3;
         Integer b = 6;
         Dzialanie dzialanie = new Dzialanie();
         Integer expected = 9;
 
-        // act
         Integer actual = dzialanie.dodaj(a, b);
 
-        // assert
         assertEquals(expected, actual);
     }
 
     @Test
     void dodajTest2() {
-        int actual = new Dzialanie().dodaj(-10, 3);
-        assertEquals(-7, actual);
+        Integer a = -10;
+        Integer b = 5;
+        Dzialanie dzialanie = new Dzialanie();
+        Integer expected = -5;
+
+        Integer actual = dzialanie.dodaj(a, b);
+
+        assertEquals(expected, actual);
     }
+
 }
