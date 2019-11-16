@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -37,9 +38,11 @@ class DzialanieTest {
         Integer b = 2;
         Dzialanie dzialanie = new Dzialanie();
 
-        assertThrows(NullPointerException.class, () -> {
+        Executable executable = () -> {
             dzialanie.dodaj(a, b);
-        });
+        };
+
+        assertThrows(NullPointerException.class, executable);
     }
 
 }
