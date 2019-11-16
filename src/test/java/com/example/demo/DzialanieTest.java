@@ -2,7 +2,8 @@ package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class DzialanieTest {
 
@@ -31,34 +32,14 @@ class DzialanieTest {
     }
 
     @Test
-    void dodajTest3() {
-        Integer a = 2;
-        Integer b = 2;
-        Dzialanie dzialanie = new Dzialanie();
-        Integer expected = 5;
-
-        Integer actual = dzialanie.dodaj(a, b);
-
-        assertEquals(expected, actual);
-//        jest rzucony
-//        AssertionFailedError (org.opentest4j)
-//        AssertionError (java.lang)
-//        Error (java.lang)
-//        Throwable (java.lang)
-
-    }
-
-    @Test
     void dodajTest4() {
         Integer a = null;
         Integer b = 2;
         Dzialanie dzialanie = new Dzialanie();
-        Integer expected = null;
 
-        Integer actual = dzialanie.dodaj(a, b);
-
-        assertEquals(expected, actual);
-//      jest rzucony NullPointerException
+        assertThrows(NullPointerException.class, () -> {
+            dzialanie.dodaj(a, b);
+        });
     }
 
 }
