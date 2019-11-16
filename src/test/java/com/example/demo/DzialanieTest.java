@@ -48,4 +48,17 @@ class DzialanieTest {
 
     }
 
+    @Test
+    void dodajTest4() {
+        Integer a = null;
+        Integer b = 2;
+        Dzialanie dzialanie = new Dzialanie();
+        Integer expected = null;
+
+        Integer actual = dzialanie.dodaj(a, b);
+
+        assertEquals(expected, actual);
+//      jest rzucony NullPointerException
+    }
+
 }
