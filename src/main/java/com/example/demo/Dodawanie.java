@@ -6,4 +6,8 @@ public class Dodawanie {
         return a + b;
     }
 
+    public Integer podziel(final Integer a, final Integer b) {
+        return a / b;
+    }
+
 }

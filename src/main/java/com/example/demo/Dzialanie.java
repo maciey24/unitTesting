@@ -14,6 +14,7 @@ public class Dzialanie {
     public Integer dodajLiczbyPobraneSkads() {
         Integer pobranaLiczba1 = serwis1.pobierzLiczbe();
         Integer pobranaLiczba2 = serwis2.pobierzLiczbe();
-        return dodawanie.dodaj(pobranaLiczba1, pobranaLiczba2);
+        Integer wynik = dodawanie.podziel(pobranaLiczba1, pobranaLiczba2);
+        return wynik;
     }
 }
