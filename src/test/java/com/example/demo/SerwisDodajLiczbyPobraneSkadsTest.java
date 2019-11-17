@@ -45,6 +45,8 @@ class SerwisDodajLiczbyPobraneSkadsTest {
         Integer actual = serwis.dodajLiczbyPobraneSkads();
 
         assertEquals(expected, actual);
+        verify(dzialanie).dodaj(12, 34);
+        verify(dzialanie, times(1)).dodaj(anyInt(), anyInt());
     }
 
     @Test
