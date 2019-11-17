@@ -74,6 +74,7 @@ class SerwisDodajLiczbyPobraneSkadsTest {
     void podzielLiczbyPobraneSkadsTest2() {
         doReturn(12).when(serwis1).pobierzLiczbe();
         doReturn(0).when(serwis2).pobierzLiczbe();
+
         doThrow(new RuntimeException("dzielenie przez 0 ")).when(dzialanie).podziel(anyInt(), eq(0));
         Serwis serwis = new Serwis();
         serwis.setSerwis1(serwis1);
