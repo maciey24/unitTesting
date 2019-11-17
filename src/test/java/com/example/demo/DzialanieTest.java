@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
@@ -8,11 +9,17 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class DzialanieTest {
 
+    Dzialanie dzialanie;
+
+    @BeforeEach
+    void beforeEach() {
+        this.dzialanie = new Dzialanie(null);
+    }
+
     @Test
     void dodajTest() {
         Integer a = 3;
         Integer b = 6;
-        Dzialanie dzialanie = new Dzialanie();
         Integer expected = 9;
 
         Integer actual = dzialanie.dodaj(a, b);
@@ -24,7 +31,6 @@ class DzialanieTest {
     void dodajTest2() {
         Integer a = -10;
         Integer b = 5;
-        Dzialanie dzialanie = new Dzialanie();
         Integer expected = -5;
 
         Integer actual = dzialanie.dodaj(a, b);
@@ -36,7 +42,6 @@ class DzialanieTest {
     void dodajTest4() {
         Integer a = null;
         Integer b = 2;
-        Dzialanie dzialanie = new Dzialanie();
 
         Executable executable = () -> {
             dzialanie.dodaj(a, b);

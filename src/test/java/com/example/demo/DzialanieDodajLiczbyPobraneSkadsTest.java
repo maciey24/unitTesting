@@ -17,14 +17,18 @@ class DzialanieDodajLiczbyPobraneSkadsTest {
     @Mock
     Serwis2 serwis2;
 
+    @Mock
+    WszystkieSerwisy wszystkieSerwisy;
+
     @Test
     void dodajLiczbyPobraneSkadsTest1() {
         MockitoAnnotations.initMocks(this);
         doReturn(1000).when(serwis1).pobierzLiczbe();
         doReturn(2000).when(serwis2).pobierzLiczbe();
-        Dzialanie dzialanie = new Dzialanie();
-        dzialanie.setSerwis1(serwis1);
-        dzialanie.setSerwis2(serwis2);
+        //antyprzykład - jak NIE robić!
+        doReturn(serwis1).when(wszystkieSerwisy).getSerwis1();
+        doReturn(serwis2).when(wszystkieSerwisy).getSerwis2();
+        Dzialanie dzialanie = new Dzialanie(wszystkieSerwisy);
         Integer expected = 3000;
 
         Integer actual = dzialanie.dodajLiczbyPobraneSkads();
