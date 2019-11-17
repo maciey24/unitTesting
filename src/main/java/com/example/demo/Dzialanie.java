@@ -3,7 +3,8 @@ package com.example.demo;
 //klasa nie może być final, czyli w kotlinie - powinna być open, jeśli chcemy ją mockować
 public class Dzialanie {
 
-    //metody nie powinny być prywatne, ani statyczne
+    //metody nie powinny być prywatne, ani statyczne,
+    //dlatego singletony implementuje się za pomocą obiektów, i dlatego w ogóle używa się Spring'a
     public Integer dodaj(final Integer a, final Integer b) {
         return a + b;
     }

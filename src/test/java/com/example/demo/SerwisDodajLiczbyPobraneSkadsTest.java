@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 import org.mockito.Mock;
@@ -30,6 +31,7 @@ class SerwisDodajLiczbyPobraneSkadsTest {
     }
 
     @Test
+    @DisplayName("given some numbers returned by services, when they are summed, then method should return value returned by dzialanie.dodaj")
     void dodajLiczbyPobraneSkadsTest1() {
         doReturn(12).when(serwis1).pobierzLiczbe();
         doReturn(34).when(serwis2).pobierzLiczbe();
@@ -65,6 +67,8 @@ class SerwisDodajLiczbyPobraneSkadsTest {
 
 
     @Test
+    //w kotlinie - zamiast DisplayName - używa się nazw metod zawierających spacje, otoczonych ``
+    @DisplayName("given second number is 0, when numbers are divided, then the method should not throw any exception")
     void podzielLiczbyPobraneSkadsTest2() {
         doReturn(12).when(serwis1).pobierzLiczbe();
         doReturn(0).when(serwis2).pobierzLiczbe();
