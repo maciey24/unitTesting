@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class DzialanieTest {
 
-    Dzialanie dzialanie;
+    Dodawanie dodawanie;
 
     @BeforeEach
     void beforeEach() {
-        this.dzialanie = new Dzialanie();
+        this.dodawanie = new Dodawanie();
     }
 
     @Test
@@ -22,7 +22,7 @@ class DzialanieTest {
         Integer b = 6;
         Integer expected = 9;
 
-        Integer actual = dzialanie.dodaj(a, b);
+        Integer actual = dodawanie.dodaj(a, b);
 
         assertEquals(expected, actual);
     }
@@ -33,7 +33,7 @@ class DzialanieTest {
         Integer b = 5;
         Integer expected = -5;
 
-        Integer actual = dzialanie.dodaj(a, b);
+        Integer actual = dodawanie.dodaj(a, b);
 
         assertEquals(expected, actual);
     }
@@ -44,7 +44,7 @@ class DzialanieTest {
         Integer b = 2;
 
         Executable executable = () -> {
-            dzialanie.dodaj(a, b);
+            dodawanie.dodaj(a, b);
         };
 
         assertThrows(NullPointerException.class, executable);

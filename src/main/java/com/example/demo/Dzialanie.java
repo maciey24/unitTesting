@@ -9,13 +9,11 @@ public class Dzialanie {
     @Setter
     Serwis2 serwis2 = new Serwis2();
 
-    private Integer dodaj(final Integer a, final Integer b) {
-        return a + b;
-    }
+    Dodawanie dodawanie = new Dodawanie();
 
     public Integer dodajLiczbyPobraneSkads() {
         Integer pobranaLiczba1 = serwis1.pobierzLiczbe();
         Integer pobranaLiczba2 = serwis2.pobierzLiczbe();
-        return dodaj(pobranaLiczba1, pobranaLiczba2);
+        return dodawanie.dodaj(pobranaLiczba1, pobranaLiczba2);
     }
 }
