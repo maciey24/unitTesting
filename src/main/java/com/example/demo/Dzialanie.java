@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Service;
+
+@Service
 //klasa nie może być final, czyli w kotlinie - powinna być open, jeśli chcemy ją mockować
 public class Dzialanie {
 

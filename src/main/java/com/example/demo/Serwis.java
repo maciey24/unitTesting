@@ -1,15 +1,21 @@
 package com.example.demo;
 
-import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Serwis {
 
-    @Setter
-    Serwis1 serwis1 = new Serwis1();
-    @Setter
-    Serwis2 serwis2 = new Serwis2();
-    @Setter
-    Dzialanie dzialanie = new Dzialanie();
+    @Autowired
+    Serwis(Serwis1 serwis1, Serwis2 serwis2, Dzialanie dzialanie) {
+        this.serwis1 = serwis1;
+        this.serwis2 = serwis2;
+        this.dzialanie = dzialanie;
+    }
+
+    private Serwis1 serwis1;
+    private Serwis2 serwis2;
+    private Dzialanie dzialanie;
 
     public Integer dodajLiczbyPobraneSkads() {
         Integer pobranaLiczba1 = serwis1.pobierzLiczbe();
