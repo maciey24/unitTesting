@@ -4,9 +4,7 @@ import lombok.Setter;
 
 public class Dzialanie {
 
-    @Setter
     Serwis1 serwis1 = new Serwis1();
-    @Setter
     Serwis2 serwis2 = new Serwis2();
 
     public Integer dodaj(final Integer a, final Integer b) {
