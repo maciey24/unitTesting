@@ -7,8 +7,7 @@ import org.junit.jupiter.api.function.Executable;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
@@ -47,18 +46,17 @@ class DzialanieDodajLiczbyPobraneSkadsTest {
     }
 
     @Test
-    void dodajLiczbyPobraneSkadsTest2() {
+    void podzielLiczbyPobraneSkadsTest1() {
         doReturn(12).when(serwis1).pobierzLiczbe();
         doReturn(0).when(serwis2).pobierzLiczbe();
-        doThrow(new RuntimeException("dzielenie przez 0 ")).when(dodawanie).dodaj(anyInt(), eq(0));
+        doThrow(new RuntimeException("dzielenie przez 0 ")).when(dodawanie).podziel(anyInt(), eq(0));
         Dzialanie dzialanie = new Dzialanie();
         dzialanie.setSerwis1(serwis1);
         dzialanie.setSerwis2(serwis2);
         dzialanie.setDodawanie(dodawanie);
-        Class expected = new RuntimeException().getClass();
 
-        Executable executable = () -> dzialanie.dodajLiczbyPobraneSkads();
+        Executable executable = () -> dzialanie.podzielLiczbyPobraneSkads();
 
-        assertThrows(expected, executable);
+        assertDoesNotThrow(executable);
     }
 }

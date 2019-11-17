@@ -14,7 +14,18 @@ public class Dzialanie {
     public Integer dodajLiczbyPobraneSkads() {
         Integer pobranaLiczba1 = serwis1.pobierzLiczbe();
         Integer pobranaLiczba2 = serwis2.pobierzLiczbe();
-        Integer wynik = dodawanie.podziel(pobranaLiczba1, pobranaLiczba2);
+        return dodawanie.dodaj(pobranaLiczba1, pobranaLiczba2);
+    }
+
+    public Integer podzielLiczbyPobraneSkads() {
+        Integer wynik = null;
+        try {
+            Integer pobranaLiczba1 = serwis1.pobierzLiczbe();
+            Integer pobranaLiczba2 = serwis2.pobierzLiczbe();
+            wynik = dodawanie.podziel(pobranaLiczba1, pobranaLiczba2);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return wynik;
     }
 }
