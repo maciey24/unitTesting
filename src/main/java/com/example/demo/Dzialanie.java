@@ -1,12 +1,12 @@
 package com.example.demo;
 
-import jdk.nashorn.internal.runtime.logging.Logger;
 import lombok.Setter;
 
-@Logger
 public class Dzialanie {
 
+    @Setter
     Serwis1 serwis1 = new Serwis1();
+    @Setter
     Serwis2 serwis2 = new Serwis2();
 
     public Integer dodaj(final Integer a, final Integer b) {
