@@ -8,7 +8,7 @@ public class Dzialanie {
     Serwis1 serwis1 = new Serwis1();
     @Setter
     Serwis2 serwis2 = new Serwis2();
-
+    @Setter
     Dodawanie dodawanie = new Dodawanie();
 
     public Integer dodajLiczbyPobraneSkads() {
