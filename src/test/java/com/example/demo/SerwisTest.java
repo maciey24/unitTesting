@@ -7,13 +7,13 @@ import org.junit.jupiter.api.function.Executable;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class DzialanieTest {
+class SerwisTest {
 
-    Dodawanie dodawanie;
+    Dzialanie dzialanie;
 
     @BeforeEach
     void beforeEach() {
-        this.dodawanie = new Dodawanie();
+        this.dzialanie = new Dzialanie();
     }
 
     @Test
@@ -22,7 +22,7 @@ class DzialanieTest {
         Integer b = 6;
         Integer expected = 9;
 
-        Integer actual = dodawanie.dodaj(a, b);
+        Integer actual = dzialanie.dodaj(a, b);
 
         assertEquals(expected, actual);
     }
@@ -33,7 +33,7 @@ class DzialanieTest {
         Integer b = 5;
         Integer expected = -5;
 
-        Integer actual = dodawanie.dodaj(a, b);
+        Integer actual = dzialanie.dodaj(a, b);
 
         assertEquals(expected, actual);
     }
@@ -44,7 +44,7 @@ class DzialanieTest {
         Integer b = 2;
 
         Executable executable = () -> {
-            dodawanie.dodaj(a, b);
+            dzialanie.dodaj(a, b);
         };
 
         assertThrows(NullPointerException.class, executable);
