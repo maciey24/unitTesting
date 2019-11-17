@@ -2,35 +2,30 @@ package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.doReturn;
 
 class DzialanieDodajLiczbyPobraneSkadsTest {
 
-    //tak się nie robi, ale to przykład:
-    class Serwis3 extends Serwis1 {
-        @Override
-        public Integer pobierzLiczbe() {
-            return 100;
-        }
-    }
+    @Mock
+    Serwis1 serwis1;
 
-    class Serwis4 extends Serwis2 {
-        @Override
-        public Integer pobierzLiczbe() {
-            return 200;
-        }
-    }
+    @Mock
+    Serwis2 serwis2;
 
     @Test
     void dodajLiczbyPobraneSkadsTest1() {
-        Serwis1 serwis1 = new Serwis3();
-        Serwis2 serwis2 = new Serwis4();
+        MockitoAnnotations.initMocks(this);
+        doReturn(1000).when(serwis1).pobierzLiczbe();
+        doReturn(2000).when(serwis2).pobierzLiczbe();
         Dzialanie dzialanie = new Dzialanie();
         dzialanie.setSerwis1(serwis1);
         dzialanie.setSerwis2(serwis2);
-        Integer expected = 300;
+        Integer expected = 3000;
 
         Integer actual = dzialanie.dodajLiczbyPobraneSkads();
 
