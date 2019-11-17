@@ -28,6 +28,9 @@ public class Serwis {
         try {
             Integer pobranaLiczba1 = serwis1.pobierzLiczbe();
             Integer pobranaLiczba2 = serwis2.pobierzLiczbe();
+            //serwis2 może z powodu swoich własnych jakichś ograniczeń, nigdy nie zwróci liczby "0",
+            //ale mimo wszystko musimy i tak przetestować funkcję "podziel" pod tym kątem,
+            //na przykład z powodu tego, że może w przyszłości ktoś będzie chciał jej tak użyć
             wynik = dzialanie.podziel(pobranaLiczba1, pobranaLiczba2);
         } catch (Exception e) {
             System.out.println(e);
